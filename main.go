@@ -20,6 +20,8 @@ type pane int
 const (
 	machinesPane pane = iota
 	vpnPane
+
+	projectURL = "https://github.com/z-tejani/htb"
 )
 
 type machineItem struct{ machine Machine }
@@ -909,6 +911,7 @@ func (m model) View() string {
 	if m.loading {
 		header += " " + m.spinner.View()
 	}
+	projectLine := mutedStyle.Render("Project: " + projectURL)
 
 	if m.client == nil {
 		count := len([]rune(m.tokenValue))
@@ -936,6 +939,7 @@ func (m model) View() string {
 
 		body := []string{
 			header,
+			projectLine,
 			tokenBoxStyle.Width(min(90, max(40, m.width-4))).Render(strings.Join(formLines, "\n")),
 		}
 		if m.status != "" {
@@ -1016,6 +1020,7 @@ func (m model) View() string {
 
 	body := []string{
 		header,
+		projectLine,
 		strings.Join(panes, " | "),
 		activeSummary,
 		categoryLine,

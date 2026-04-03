@@ -2,6 +2,8 @@
 
 Personal Hack The Box TUI in Go for when you want a fast keyboard-first client instead of the website or MCP.
 
+Project: [github.com/z-tejani/htb](https://github.com/z-tejani/htb)
+
 ## Features
 
 - active machine summary
@@ -17,7 +19,7 @@ Personal Hack The Box TUI in Go for when you want a fast keyboard-first client i
 
 1. Run `go run .`
 2. If no token is configured, press `t` in the TUI and paste `HTB_APP_TOKEN`.
-3. The token is saved to `htbTUI/.env`, which overrides `HTB/config/replay.env`.
+3. The token is saved to `.env`, which overrides `HTB/config/replay.env`.
 
 ## Keys
 
@@ -38,8 +40,9 @@ Personal Hack The Box TUI in Go for when you want a fast keyboard-first client i
 ## Notes
 
 - The TUI uses the live HTB v4 API.
-- Shell environment wins first, then `htbTUI/.env`, then `HTB/config/replay.env`.
+- Shell environment wins first, then `.env`, then `HTB/config/replay.env`.
 - Machine loading now includes current season, retired, and Starting Point catalogs, so the first refresh can take a few seconds.
 - VPN downloads are saved under `.htbtui/vpn` in the project directory.
 - Local VPN connect/disconnect uses `openvpn` if it is installed on your machine.
 - Preferred VPN values are honored automatically before a spawn request if configured.
+- Source code and updates live at [github.com/z-tejani/htb](https://github.com/z-tejani/htb).
